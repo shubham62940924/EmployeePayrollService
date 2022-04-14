@@ -2,6 +2,7 @@ package com.bridgelab.employeepayrollapp.service;
 
 import com.bridgelab.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelab.employeepayrollapp.entity.Employee;
+import com.bridgelab.employeepayrollapp.exception.EmployeePayrollException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,9 +19,13 @@ public class EmployeePayrollServiceImpl implements EmployeePayrollService {
     @Override
     public Employee getEmployeeById(long id) {
         Employee employee = null;
-        employee = new Employee(1,new EmployeeDTO("Avinash",20000));
-        return employee;
+        if(id == 1) {
+            employee = new Employee(1,new EmployeeDTO("Don",10000));
+            return employee; }
+        else {
+            throw new EmployeePayrollException("Employee with Given ID Not Found."); }
     }
+
 
     @Override
     public Employee createEmployee(EmployeeDTO employeeDTO) {
