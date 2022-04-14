@@ -45,7 +45,7 @@ public class EmployeePayrollController {
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empId) {
         Employee employee = null;
         employee = new Employee(1, new EmployeeDTO("Singh is King", 800000));
-        ResponseDTO responseDTO = new ResponseDTO("Get Call Success for ID", employee);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call Success for igit D", employee);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
